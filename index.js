@@ -1,7 +1,7 @@
 const postcss = require('postcss');
 const functions = require('postcss-functions');
 const consistent = require('consistent');
-const { resolve } = require('url');
+const url = require('url');
 
 module.exports = postcss.plugin('prefix', (options = {}) => {
   let prefix = options.prefix || '';
@@ -40,7 +40,7 @@ module.exports = postcss.plugin('prefix', (options = {}) => {
 
     const prefix = includePrefix ? this.getPrefix(sanitizedPath) : '';
 
-    return `url(${resolve(prefix, sanitizedPath)})`;
+    return `url(${url.resolve(prefix, sanitizedPath)})`;
   };
 
   return postcss().use(functions({
