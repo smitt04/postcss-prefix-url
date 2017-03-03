@@ -1,0 +1,7 @@
+body {
+  background: cdn('/test.png');
+}
+
+p {
+  background: cdn('/test2.png');
+}

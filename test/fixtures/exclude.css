@@ -1,0 +1,11 @@
+body {
+  background: cdn('/test.png');
+}
+
+p {
+  background: cdn('/test2.png');
+}
+
+.testExclude {
+  background: cdn(/exclude-this/test1.png);
+}

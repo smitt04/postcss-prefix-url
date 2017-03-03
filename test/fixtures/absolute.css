@@ -1,0 +1,11 @@
+body {
+  background: cdn('/test.png');
+}
+
+p {
+  background: cdn('/test2.png');
+}
+
+.testAbsolute {
+  background: cdn(http://exclude-this.com/test1.png);
+}

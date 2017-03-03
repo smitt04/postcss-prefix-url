@@ -1,0 +1,11 @@
+body {
+  background: url(https://img1.example.com/test.png);
+}
+
+p {
+  background: url(https://img1.example.com/test2.png);
+}
+
+.testUrl {
+  background: url(/test1.png);
+}
