@@ -1,9 +1,12 @@
+'use strict';
+
 const postcss = require('postcss');
 const functions = require('postcss-functions');
 const consistent = require('consistent');
 const url = require('url');
 
-module.exports = postcss.plugin('prefix', (options = {}) => {
+module.exports = postcss.plugin('prefix', (options) => {
+  options = options || {};
   let prefix = options.prefix || '';
   const useUrl = options.useUrl || false;
   const exclude = options.exclude || null;
@@ -31,7 +34,8 @@ module.exports = postcss.plugin('prefix', (options = {}) => {
     return ring.get(path);
   }
 
-  this.formatUrl = (path, includePrefix = true) => {
+  this.formatUrl = (path, includePrefix) => {
+    includePrefix = typeof includePrefix !== 'undefined' ? includePrefix : true;
     const sanitizedPath = path.replace(/['"]/g, '');
 
     if ((exclude && exclude.test(path)) || /^([a-z]+:\/\/|\/\/)/i.test(path)) {

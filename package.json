@@ -4,14 +4,20 @@
   "description": "Prefix URLs with CDN",
   "main": "index.js",
   "scripts": {
-    "test": "ava --fail-fast test"
+    "test": "ava test"
   },
   "keywords": [
     "postcss",
     "postcss-plugin",
-    "cdn"
+    "cdn",
+    "prefix",
+    "url"
   ],
   "author": "Kevin Smithson <smitt04@gmail.com>",
+  "repository": {
+    "url": "https://github.com/smitt04/postcss-prefix-url.git",
+    "type": "git"
+  },
   "license": "ISC",
   "dependencies": {
     "consistent": "^1.1.0",
