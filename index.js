@@ -35,6 +35,7 @@ module.exports = postcss.plugin('prefix', (options) => {
   }
 
   this.formatUrl = (path, includePrefix) => {
+    const isDataUri = /^["']?data:/i.test(path);
     includePrefix = typeof includePrefix !== 'undefined' ? includePrefix : true;
     const sanitizedPath = path.replace(/['"]/g, '');
 
@@ -43,8 +44,9 @@ module.exports = postcss.plugin('prefix', (options) => {
     }
 
     const prefix = includePrefix ? this.getPrefix(sanitizedPath) : '';
+    const formatted = isDataUri ? path : url.resolve(prefix, sanitizedPath);
 
-    return `url(${url.resolve(prefix, sanitizedPath)})`;
+    return `url(${formatted})`;
   };
 
   return postcss().use(functions({

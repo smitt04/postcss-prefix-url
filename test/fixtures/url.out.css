@@ -5,3 +5,7 @@ body {
 p {
   background: url(https://img2.example.com/test2.png);
 }
+
+span {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 8 8"><path d="M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z"/></svg>');
+}
